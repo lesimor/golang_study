@@ -3,6 +3,7 @@ package unicode
 import "fmt"
 
 func Example_print_unicode() {
+	// 문자열은 읽기 전용.
 	s := "가각갂"
 	for i, r := range s {
 		fmt.Println(i, r)
@@ -51,4 +52,12 @@ func Example_print_string_with_unicode() {
 	// 같
 	// 갚
 	// 갛
+}
+
+func Example_modifyBytes() {
+	b := []byte("가나다")
+	b[2]++
+	fmt.Println(string(b))
+	// Output:
+	// 각나다
 }
