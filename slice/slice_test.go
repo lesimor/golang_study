@@ -72,9 +72,24 @@ func Example_sliceCap() {
 }
 
 func Example_sliceCopy() {
+	// 안정적으로 copy하는 방법.
 	src := []int{30, 20, 50, 10, 40}
 	dest := make([]int, len(src))
 	for i := range src {
 		dest[i] = src[i]
 	}
+}
+
+func Example_copyMethod() {
+	src := []int{30, 20, 50, 10, 40}
+	dest := make([]int, 3)
+
+	// copy는 복사된 element의 갯수를 반환.
+	// min(src 길이, dest의 길이)
+	if n := copy(dest, src); n != len(src) {
+		fmt.Println("복사가 덜 됐습니다.")
+	}
+
+	// Output:
+	// .
 }

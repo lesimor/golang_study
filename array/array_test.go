@@ -6,6 +6,7 @@ import (
 )
 
 func Example_array() {
+	// 갯수를 미리 정해놓으면 array type
 	fruits := [3]string{"사과", "바나나", "레몬"}
 	var postPosition string
 	for _, fruit := range fruits {
