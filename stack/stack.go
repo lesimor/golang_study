@@ -5,6 +5,18 @@ import (
 	"strings"
 )
 
+func Push(s []int, val int) []int {
+	return append(s, val)
+}
+
+func Pop(s []int) ([]int, int) {
+	if len(s) <= 0 {
+		return nil, -1
+	}
+	newSlice := s[:len(s)-1]
+	return newSlice, s[len(s)-1]
+}
+
 func Eval(expr string) int {
 	var ops []string
 	var nums []int
